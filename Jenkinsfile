@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/tirucloud/DevOps-Project-Swiggy.git'
+                git branch: 'main', url: 'https://github.com/tirucloud/DevOps-Project-Swiggy-master.git'
             }
         }
         stage("Sonarqube Analysis "){
