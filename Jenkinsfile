@@ -65,8 +65,10 @@ pipeline{
                 sh "trivy image tirucloud/swiggy:latest > trivy.txt" 
             }
         }
+        
         stage('Deploy to container'){
             steps{
+                sh 'docker rm -f swiggy || true'
                 sh 'docker run -d --name swiggy -p 3000:3000 tirucloud/swiggy:latest'
             }
         }
